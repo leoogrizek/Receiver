@@ -6,9 +6,7 @@
 #include "rf.h"
 #include "uart.h"
 #include "spi.h"
-
-uint8_t value = 0;
-
+#include <stdio.h>
 
 int main(void) {
 	uart_init(9600);
@@ -23,18 +21,19 @@ int main(void) {
 
 	uart_println("Beginning ... ");
 
-
+	char buffer[50];  // Buffer to hold the formatted string
 	
 	
 	while (1) {
 		if(nrf24_data_available(1)) {
 			nrf24_receive(RxData);
 			uart_println("Packet received: ");
-			uart_println(RxData);
+			sprintf(buffer, "Thrust: %d, Yaw: %d, Pitch: %d, Roll: %d", RxData[0], RxData[1], RxData[2], RxData[3]);
+			uart_println(buffer);
 			uart_newline();
 			
 		}
-		_delay_ms(1000);
+		
 		//uart_println("test");
 	}
 }

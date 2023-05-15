@@ -256,7 +256,7 @@ uint8_t nrf24_data_available(uint8_t pipe) {
 void nrf24_receive(uint8_t *buffer) {
 	PORTB &= ~(1 << CSN); // Pull CSN low
 		
-	spi_transfer(W_TX_PAYLOAD); // Write payload command
+	spi_transfer(R_RX_PAYLOAD); // Write payload command
 		
 	for (uint8_t i = 0; i < 32; i++) { // Send the payload
 		buffer[i]=spi_transfer(0x00);
