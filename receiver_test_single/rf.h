@@ -75,8 +75,6 @@ void nrf24_power_up_tx();
 void nrf24_send_cmd(uint8_t cmd);
 uint8_t nrf24_transmit(uint8_t *data, uint8_t len);
 void nrf24_set_tx_mode(uint8_t *address, uint8_t channel);
-uint8_t nrf24_data_available(uint8_t pipe);
-void nrf24_receive(uint8_t *buffer);
 void nrf24_set_rx_mode(uint8_t *address, uint8_t channel);
 
 

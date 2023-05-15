@@ -6,6 +6,7 @@
  */
 #include "rf.h"
 #include "spi.h"
+#include "uart.h"
 
 
 
@@ -159,6 +160,7 @@ void nrf24_set_tx_mode(uint8_t *address, uint8_t channel) {
 	config |= (1<<1);
 	nrf24_write_register(CONFIG, config);
 	
+	_delay_ms(2); // Wait for the device to settle
 	
 	PORTB |= (1 << CE); // Set CE high
 		
@@ -188,36 +190,47 @@ void nrf24_set_rx_mode(uint8_t *address, uint8_t channel) {
 	config |= (1<<0) | (1<<1);
 	nrf24_write_register(CONFIG, config);
 	
+	_delay_ms(2); // Wait for the device to settle
 	
-	PORTB |= (1 << CE); // Set CE high
-	
+	PORTB |= (1 << CE); // Set CE high	
 	
 	PORTB &= ~(1 << CSN); // Set CSN low
 }
 
 uint8_t nrf24_transmit(uint8_t *data, uint8_t len) {
+
 	
 	PORTB &= ~(1 << CSN); // Pull CSN low
+	
+	
 	
 	spi_transfer(W_TX_PAYLOAD); // Write payload command
 	
 	for (uint8_t i = 0; i < len; i++) { // Send the payload
 		spi_transfer(data[i]);
 	}
-		
+	
 	PORTB |= (1 << CSN); // Pull CSN high
+	
+
 	
 	// Pulse CE high to start transmission
 	PORTB |= (1 << CE);
-	_delay_us(15);
+	_delay_us(20);
 	PORTB &= ~(1 << CE);
+
 	
 	_delay_ms(1);
 	
 	uint8_t fifostatus = nrf24_read_register(FIFO_STATUS);
+	uart_println("fifo");
+	uart_print_binary(fifostatus);
+	uart_newline();
 	
 	if ((fifostatus&(1<<4))&&(!(fifostatus&(1<<3)))) {
 		nrf24_send_cmd(FLUSH_TX);
+		uart_println("test");
+		uart_newline();
 		return 1;
 	}
 	return 0;
@@ -243,7 +256,7 @@ uint8_t nrf24_data_available(uint8_t pipe) {
 void nrf24_receive(uint8_t *buffer) {
 	PORTB &= ~(1 << CSN); // Pull CSN low
 		
-	spi_transfer(R_RX_PAYLOAD); // Write payload command
+	spi_transfer(W_TX_PAYLOAD); // Write payload command
 		
 	for (uint8_t i = 0; i < 32; i++) { // Send the payload
 		buffer[i]=spi_transfer(0x00);
@@ -251,7 +264,7 @@ void nrf24_receive(uint8_t *buffer) {
 		
 	PORTB |= (1 << CSN); // Pull CSN high
 		
-	_delay_us(10);
+	_delay_ms(1);
 		
 	nrf24_send_cmd(FLUSH_RX); // Flush rx fifo
 }
