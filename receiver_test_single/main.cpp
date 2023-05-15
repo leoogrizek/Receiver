@@ -14,21 +14,27 @@ int main(void) {
 	uart_init(9600);
 	spi_init();
 	
-	uint8_t address[5]={0x01, 0x02, 0x03, 0x04, 0x05};
-
-
-	nrf24_set_rx_tx_address(address, 0, 5);
-	nrf24_write_register(RX_ADDR_P0, 0x01);
+	uint8_t RxAddress[] = {0xEE, 0xDD, 0xCC, 0xBB, 0xAA};
+	uint8_t RxData[32];
 	
-	uint8_t value=42;
+	nrf24_init();
+	nrf24_set_rx_mode(RxAddress, 10);
+	
+
+	uart_println("Beginning ... ");
+
+
+	
+	
 	while (1) {
-		spi_transfer(W_TX_PAYLOAD);
-		spi_transfer(value);
-		PORTB |= (1 << CE);
-		_delay_us(15);
-		PORTB &= ~(1 << CE);
+		if(nrf24_data_available(1)) {
+			nrf24_receive(RxData);
+			uart_println("Packet received: ");
+			uart_println(RxData);
+			uart_newline();
+			
+		}
 		_delay_ms(1000);
+		//uart_println("test");
 	}
-	
-	return 0;
 }

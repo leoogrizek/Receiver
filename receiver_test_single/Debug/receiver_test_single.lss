@@ -3,60 +3,60 @@ receiver_test_single.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000008  00800100  00000292  00000306  2**0
+  0 .data         00000026  00800100  0000042a  0000049e  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000292  00000000  00000000  00000074  2**1
+  1 .text         0000042a  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      00000030  00000000  00000000  0000030e  2**0
+  2 .comment      00000030  00000000  00000000  000004c4  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000340  2**2
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000004f4  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000070  00000000  00000000  00000380  2**0
+  4 .debug_aranges 00000138  00000000  00000000  00000534  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000c68  00000000  00000000  000003f0  2**0
+  5 .debug_info   00001658  00000000  00000000  0000066c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000007f2  00000000  00000000  00001058  2**0
+  6 .debug_abbrev 00000a72  00000000  00000000  00001cc4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000004f3  00000000  00000000  0000184a  2**0
+  7 .debug_line   00000a92  00000000  00000000  00002736  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000fc  00000000  00000000  00001d40  2**2
+  8 .debug_frame  000002e0  00000000  00000000  000031c8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000581  00000000  00000000  00001e3c  2**0
+  9 .debug_str    00000850  00000000  00000000  000034a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000002b6  00000000  00000000  000023bd  2**0
+ 10 .debug_loc    00000b47  00000000  00000000  00003cf8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000060  00000000  00000000  00002673  2**0
+ 11 .debug_ranges 000000f8  00000000  00000000  0000483f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
-   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-   8:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  44:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  48:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
 
 00000068 <__ctors_end>:
   68:	11 24       	eor	r1, r1
@@ -70,302 +70,582 @@ Disassembly of section .text:
   74:	11 e0       	ldi	r17, 0x01	; 1
   76:	a0 e0       	ldi	r26, 0x00	; 0
   78:	b1 e0       	ldi	r27, 0x01	; 1
-  7a:	e2 e9       	ldi	r30, 0x92	; 146
-  7c:	f2 e0       	ldi	r31, 0x02	; 2
+  7a:	ea e2       	ldi	r30, 0x2A	; 42
+  7c:	f4 e0       	ldi	r31, 0x04	; 4
   7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
   80:	05 90       	lpm	r0, Z+
   82:	0d 92       	st	X+, r0
-  84:	a8 30       	cpi	r26, 0x08	; 8
+  84:	a6 32       	cpi	r26, 0x26	; 38
   86:	b1 07       	cpc	r27, r17
   88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
-  8a:	0e 94 1d 01 	call	0x23a	; 0x23a <main>
-  8e:	0c 94 47 01 	jmp	0x28e	; 0x28e <_exit>
 
-00000092 <__bad_interrupt>:
-  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a6 e2       	ldi	r26, 0x26	; 38
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
 
-00000096 <_Z8spi_initv>:
-	// Wait for data to be received
-	while (!(UCSR0A & (1 << RXC0)));
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
 
-	// Get and return received data from buffer
-	return UDR0;
-}
-  96:	84 b1       	in	r24, 0x04	; 4
-  98:	8c 62       	ori	r24, 0x2C	; 44
-  9a:	84 b9       	out	0x04, r24	; 4
-  9c:	84 b1       	in	r24, 0x04	; 4
-  9e:	8f 7e       	andi	r24, 0xEF	; 239
-  a0:	84 b9       	out	0x04, r24	; 4
-  a2:	81 e5       	ldi	r24, 0x51	; 81
-  a4:	8c bd       	out	0x2c, r24	; 44
-  a6:	08 95       	ret
+00000094 <.do_clear_bss_start>:
+  94:	a6 32       	cpi	r26, 0x26	; 38
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
+  9e:	0c 94 13 02 	jmp	0x426	; 0x426 <_exit>
 
-000000a8 <_Z12spi_transferh>:
-  a8:	8e bd       	out	0x2e, r24	; 46
-  aa:	0d b4       	in	r0, 0x2d	; 45
-  ac:	07 fe       	sbrs	r0, 7
-  ae:	fd cf       	rjmp	.-6      	; 0xaa <_Z12spi_transferh+0x2>
-  b0:	8e b5       	in	r24, 0x2e	; 46
-  b2:	08 95       	ret
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-000000b4 <_Z20nrf24_write_registerhh>:
-  b4:	cf 93       	push	r28
-  b6:	c6 2f       	mov	r28, r22
-  b8:	95 b1       	in	r25, 0x05	; 5
-  ba:	9b 7f       	andi	r25, 0xFB	; 251
-  bc:	95 b9       	out	0x05, r25	; 5
-  be:	0e 94 54 00 	call	0xa8	; 0xa8 <_Z12spi_transferh>
-  c2:	8c 2f       	mov	r24, r28
-  c4:	0e 94 54 00 	call	0xa8	; 0xa8 <_Z12spi_transferh>
-  c8:	85 b1       	in	r24, 0x05	; 5
-  ca:	84 60       	ori	r24, 0x04	; 4
-  cc:	85 b9       	out	0x05, r24	; 5
-  ce:	cf 91       	pop	r28
-  d0:	08 95       	ret
+000000a6 <main>:
+#include "spi.h"
 
-000000d2 <_Z19nrf24_read_registerh>:
-  d2:	95 b1       	in	r25, 0x05	; 5
-  d4:	9b 7f       	andi	r25, 0xFB	; 251
-  d6:	95 b9       	out	0x05, r25	; 5
-  d8:	0e 94 54 00 	call	0xa8	; 0xa8 <_Z12spi_transferh>
-  dc:	8f ef       	ldi	r24, 0xFF	; 255
-  de:	0e 94 54 00 	call	0xa8	; 0xa8 <_Z12spi_transferh>
-  e2:	95 b1       	in	r25, 0x05	; 5
-  e4:	94 60       	ori	r25, 0x04	; 4
-  e6:	95 b9       	out	0x05, r25	; 5
-  e8:	08 95       	ret
+uint8_t value = 0;
 
-000000ea <_Z10nrf24_initv>:
-  ea:	cf 93       	push	r28
-  ec:	df 93       	push	r29
-  ee:	84 b1       	in	r24, 0x04	; 4
-  f0:	82 60       	ori	r24, 0x02	; 2
-  f2:	84 b9       	out	0x04, r24	; 4
-  f4:	85 b1       	in	r24, 0x05	; 5
-  f6:	8d 7f       	andi	r24, 0xFD	; 253
-  f8:	85 b9       	out	0x05, r24	; 5
-  fa:	2f ef       	ldi	r18, 0xFF	; 255
-  fc:	81 ee       	ldi	r24, 0xE1	; 225
-  fe:	94 e0       	ldi	r25, 0x04	; 4
- 100:	21 50       	subi	r18, 0x01	; 1
- 102:	80 40       	sbci	r24, 0x00	; 0
- 104:	90 40       	sbci	r25, 0x00	; 0
- 106:	e1 f7       	brne	.-8      	; 0x100 <_Z10nrf24_initv+0x16>
- 108:	00 c0       	rjmp	.+0      	; 0x10a <_Z10nrf24_initv+0x20>
- 10a:	00 00       	nop
- 10c:	6b e0       	ldi	r22, 0x0B	; 11
- 10e:	80 e0       	ldi	r24, 0x00	; 0
- 110:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 114:	6f e3       	ldi	r22, 0x3F	; 63
- 116:	81 e0       	ldi	r24, 0x01	; 1
- 118:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 11c:	6f e3       	ldi	r22, 0x3F	; 63
- 11e:	82 e0       	ldi	r24, 0x02	; 2
- 120:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 124:	63 e0       	ldi	r22, 0x03	; 3
- 126:	83 e0       	ldi	r24, 0x03	; 3
- 128:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 12c:	6f ef       	ldi	r22, 0xFF	; 255
- 12e:	84 e0       	ldi	r24, 0x04	; 4
- 130:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 134:	61 e0       	ldi	r22, 0x01	; 1
- 136:	85 e0       	ldi	r24, 0x05	; 5
- 138:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 13c:	66 e0       	ldi	r22, 0x06	; 6
- 13e:	86 e0       	ldi	r24, 0x06	; 6
- 140:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 144:	60 e7       	ldi	r22, 0x70	; 112
- 146:	87 e0       	ldi	r24, 0x07	; 7
- 148:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 14c:	60 e0       	ldi	r22, 0x00	; 0
- 14e:	88 e0       	ldi	r24, 0x08	; 8
- 150:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 154:	60 e0       	ldi	r22, 0x00	; 0
- 156:	89 e0       	ldi	r24, 0x09	; 9
- 158:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 15c:	da e0       	ldi	r29, 0x0A	; 10
- 15e:	d0 31       	cpi	r29, 0x10	; 16
- 160:	58 f4       	brcc	.+22     	; 0x178 <_Z10nrf24_initv+0x8e>
- 162:	c0 e0       	ldi	r28, 0x00	; 0
- 164:	c5 30       	cpi	r28, 0x05	; 5
- 166:	30 f4       	brcc	.+12     	; 0x174 <_Z10nrf24_initv+0x8a>
- 168:	67 ee       	ldi	r22, 0xE7	; 231
- 16a:	8d 2f       	mov	r24, r29
- 16c:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 170:	cf 5f       	subi	r28, 0xFF	; 255
- 172:	f8 cf       	rjmp	.-16     	; 0x164 <_Z10nrf24_initv+0x7a>
- 174:	df 5f       	subi	r29, 0xFF	; 255
- 176:	f3 cf       	rjmp	.-26     	; 0x15e <_Z10nrf24_initv+0x74>
- 178:	c0 e0       	ldi	r28, 0x00	; 0
- 17a:	c5 30       	cpi	r28, 0x05	; 5
- 17c:	30 f4       	brcc	.+12     	; 0x18a <_Z10nrf24_initv+0xa0>
- 17e:	67 ee       	ldi	r22, 0xE7	; 231
- 180:	80 e1       	ldi	r24, 0x10	; 16
- 182:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 186:	cf 5f       	subi	r28, 0xFF	; 255
- 188:	f8 cf       	rjmp	.-16     	; 0x17a <_Z10nrf24_initv+0x90>
- 18a:	c1 e1       	ldi	r28, 0x11	; 17
- 18c:	c7 31       	cpi	r28, 0x17	; 23
- 18e:	30 f4       	brcc	.+12     	; 0x19c <_Z10nrf24_initv+0xb2>
- 190:	61 e0       	ldi	r22, 0x01	; 1
- 192:	8c 2f       	mov	r24, r28
- 194:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 198:	cf 5f       	subi	r28, 0xFF	; 255
- 19a:	f8 cf       	rjmp	.-16     	; 0x18c <_Z10nrf24_initv+0xa2>
- 19c:	60 e0       	ldi	r22, 0x00	; 0
- 19e:	8c e1       	ldi	r24, 0x1C	; 28
- 1a0:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 1a4:	60 e0       	ldi	r22, 0x00	; 0
- 1a6:	8d e1       	ldi	r24, 0x1D	; 29
- 1a8:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 1ac:	60 e0       	ldi	r22, 0x00	; 0
- 1ae:	81 ee       	ldi	r24, 0xE1	; 225
- 1b0:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 1b4:	60 e0       	ldi	r22, 0x00	; 0
- 1b6:	82 ee       	ldi	r24, 0xE2	; 226
- 1b8:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 1bc:	df 91       	pop	r29
- 1be:	cf 91       	pop	r28
- 1c0:	08 95       	ret
-
-000001c2 <_Z18nrf24_receive_bytev>:
- 1c2:	cf 93       	push	r28
- 1c4:	87 e0       	ldi	r24, 0x07	; 7
- 1c6:	0e 94 69 00 	call	0xd2	; 0xd2 <_Z19nrf24_read_registerh>
- 1ca:	86 ff       	sbrs	r24, 6
- 1cc:	12 c0       	rjmp	.+36     	; 0x1f2 <_Z18nrf24_receive_bytev+0x30>
- 1ce:	85 b1       	in	r24, 0x05	; 5
- 1d0:	8b 7f       	andi	r24, 0xFB	; 251
- 1d2:	85 b9       	out	0x05, r24	; 5
- 1d4:	81 e6       	ldi	r24, 0x61	; 97
- 1d6:	0e 94 54 00 	call	0xa8	; 0xa8 <_Z12spi_transferh>
- 1da:	8f ef       	ldi	r24, 0xFF	; 255
- 1dc:	0e 94 54 00 	call	0xa8	; 0xa8 <_Z12spi_transferh>
- 1e0:	c8 2f       	mov	r28, r24
- 1e2:	85 b1       	in	r24, 0x05	; 5
- 1e4:	84 60       	ori	r24, 0x04	; 4
- 1e6:	85 b9       	out	0x05, r24	; 5
- 1e8:	60 e4       	ldi	r22, 0x40	; 64
- 1ea:	87 e0       	ldi	r24, 0x07	; 7
- 1ec:	0e 94 5a 00 	call	0xb4	; 0xb4 <_Z20nrf24_write_registerhh>
- 1f0:	01 c0       	rjmp	.+2      	; 0x1f4 <_Z18nrf24_receive_bytev+0x32>
- 1f2:	c0 e0       	ldi	r28, 0x00	; 0
- 1f4:	8c 2f       	mov	r24, r28
- 1f6:	cf 91       	pop	r28
- 1f8:	08 95       	ret
-
-000001fa <_Z9uart_initv>:
- 1fa:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
- 1fe:	87 e6       	ldi	r24, 0x67	; 103
- 200:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
- 204:	88 e1       	ldi	r24, 0x18	; 24
- 206:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
- 20a:	86 e0       	ldi	r24, 0x06	; 6
- 20c:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
- 210:	08 95       	ret
-
-00000212 <_Z14uart_send_byteh>:
- 212:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
- 216:	95 ff       	sbrs	r25, 5
- 218:	fc cf       	rjmp	.-8      	; 0x212 <_Z14uart_send_byteh>
- 21a:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
- 21e:	08 95       	ret
-
-00000220 <_Z16uart_send_stringPKc>:
-
-void uart_send_string(const char *str) {
- 220:	cf 93       	push	r28
- 222:	df 93       	push	r29
- 224:	ec 01       	movw	r28, r24
-	while (*str) {
- 226:	88 81       	ld	r24, Y
- 228:	88 23       	and	r24, r24
- 22a:	21 f0       	breq	.+8      	; 0x234 <_Z16uart_send_stringPKc+0x14>
-		uart_send_byte(*str++);
- 22c:	21 96       	adiw	r28, 0x01	; 1
- 22e:	0e 94 09 01 	call	0x212	; 0x212 <_Z14uart_send_byteh>
-	// Get and return received data from buffer
-	return UDR0;
-}
-
-void uart_send_string(const char *str) {
-	while (*str) {
- 232:	f9 cf       	rjmp	.-14     	; 0x226 <_Z16uart_send_stringPKc+0x6>
-		uart_send_byte(*str++);
-	}
-}
- 234:	df 91       	pop	r29
- 236:	cf 91       	pop	r28
- 238:	08 95       	ret
-
-0000023a <main>:
 
 int main(void) {
- 23a:	cf 93       	push	r28
- 23c:	df 93       	push	r29
- 23e:	00 d0       	rcall	.+0      	; 0x240 <main+0x6>
- 240:	cd b7       	in	r28, 0x3d	; 61
- 242:	de b7       	in	r29, 0x3e	; 62
+  a6:	cf 93       	push	r28
+  a8:	df 93       	push	r29
+  aa:	cd b7       	in	r28, 0x3d	; 61
+  ac:	de b7       	in	r29, 0x3e	; 62
+  ae:	a5 97       	sbiw	r28, 0x25	; 37
+  b0:	0f b6       	in	r0, 0x3f	; 63
+  b2:	f8 94       	cli
+  b4:	de bf       	out	0x3e, r29	; 62
+  b6:	0f be       	out	0x3f, r0	; 63
+  b8:	cd bf       	out	0x3d, r28	; 61
+	uart_init(9600);
+  ba:	60 e8       	ldi	r22, 0x80	; 128
+  bc:	75 e2       	ldi	r23, 0x25	; 37
+  be:	80 e0       	ldi	r24, 0x00	; 0
+  c0:	90 e0       	ldi	r25, 0x00	; 0
+  c2:	0e 94 96 01 	call	0x32c	; 0x32c <_Z9uart_initm>
 	spi_init();
- 244:	0e 94 4b 00 	call	0x96	; 0x96 <_Z8spi_initv>
-	nrf24_init();
- 248:	0e 94 75 00 	call	0xea	; 0xea <_Z10nrf24_initv>
-	uart_init();
- 24c:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_Z9uart_initv>
-
-	// Set CE high to enable receiving mode
-	PORTB |= (1 << CE);
- 250:	85 b1       	in	r24, 0x05	; 5
- 252:	82 60       	ori	r24, 0x02	; 2
- 254:	85 b9       	out	0x05, r24	; 5
-
-	uint8_t received_data = 0;
-	char received_data_string[2];
+  c6:	0e 94 87 01 	call	0x30e	; 0x30e <_Z8spi_initv>
 	
-	uart_send_string("test");
- 256:	80 e0       	ldi	r24, 0x00	; 0
- 258:	91 e0       	ldi	r25, 0x01	; 1
- 25a:	0e 94 10 01 	call	0x220	; 0x220 <_Z16uart_send_stringPKc>
+	uint8_t RxAddress[] = {0xEE, 0xDD, 0xCC, 0xBB, 0xAA};
+  ca:	85 e0       	ldi	r24, 0x05	; 5
+  cc:	e0 e0       	ldi	r30, 0x00	; 0
+  ce:	f1 e0       	ldi	r31, 0x01	; 1
+  d0:	de 01       	movw	r26, r28
+  d2:	11 96       	adiw	r26, 0x01	; 1
+  d4:	01 90       	ld	r0, Z+
+  d6:	0d 92       	st	X+, r0
+  d8:	8a 95       	dec	r24
+  da:	e1 f7       	brne	.-8      	; 0xd4 <main+0x2e>
+	uint8_t RxData[32];
+	
+	nrf24_init();
+  dc:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_Z10nrf24_initv>
+	nrf24_set_rx_mode(RxAddress, 10);
+  e0:	6a e0       	ldi	r22, 0x0A	; 10
+  e2:	ce 01       	movw	r24, r28
+  e4:	01 96       	adiw	r24, 0x01	; 1
+  e6:	0e 94 14 01 	call	0x228	; 0x228 <_Z17nrf24_set_rx_modePhh>
+	
 
+	uart_println("Beginning ... ");
+  ea:	85 e0       	ldi	r24, 0x05	; 5
+  ec:	91 e0       	ldi	r25, 0x01	; 1
+  ee:	0e 94 c4 01 	call	0x388	; 0x388 <_Z12uart_printlnPKc>
+
+
+	
+	
 	while (1) {
-		received_data = nrf24_receive_byte();
- 25e:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <_Z18nrf24_receive_bytev>
-		if (received_data != 0) {
- 262:	88 23       	and	r24, r24
- 264:	51 f0       	breq	.+20     	; 0x27a <main+0x40>
-			// Convert the received byte to a string representation and send it over UART
-			received_data_string[0] = received_data;
- 266:	89 83       	std	Y+1, r24	; 0x01
-			received_data_string[1] = '\0';
- 268:	1a 82       	std	Y+2, r1	; 0x02
-			uart_send_string(received_data_string);
- 26a:	ce 01       	movw	r24, r28
- 26c:	01 96       	adiw	r24, 0x01	; 1
- 26e:	0e 94 10 01 	call	0x220	; 0x220 <_Z16uart_send_stringPKc>
-			uart_send_string("\r\n");
- 272:	85 e0       	ldi	r24, 0x05	; 5
- 274:	91 e0       	ldi	r25, 0x01	; 1
- 276:	0e 94 10 01 	call	0x220	; 0x220 <_Z16uart_send_stringPKc>
+		if(nrf24_data_available(1)) {
+  f2:	81 e0       	ldi	r24, 0x01	; 1
+  f4:	0e 94 42 01 	call	0x284	; 0x284 <_Z20nrf24_data_availableh>
+  f8:	88 23       	and	r24, r24
+  fa:	71 f0       	breq	.+28     	; 0x118 <main+0x72>
+			nrf24_receive(RxData);
+  fc:	ce 01       	movw	r24, r28
+  fe:	06 96       	adiw	r24, 0x06	; 6
+ 100:	0e 94 5e 01 	call	0x2bc	; 0x2bc <_Z13nrf24_receivePh>
+			uart_println("Packet received: ");
+ 104:	84 e1       	ldi	r24, 0x14	; 20
+ 106:	91 e0       	ldi	r25, 0x01	; 1
+ 108:	0e 94 c4 01 	call	0x388	; 0x388 <_Z12uart_printlnPKc>
+			uart_println(RxData);
+ 10c:	ce 01       	movw	r24, r28
+ 10e:	06 96       	adiw	r24, 0x06	; 6
+ 110:	0e 94 d7 01 	call	0x3ae	; 0x3ae <_Z12uart_printlnPh>
+			uart_newline();
+ 114:	0e 94 ea 01 	call	0x3d4	; 0x3d4 <_Z12uart_newlinev>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 27a:	2f ef       	ldi	r18, 0xFF	; 255
- 27c:	89 e6       	ldi	r24, 0x69	; 105
- 27e:	98 e1       	ldi	r25, 0x18	; 24
- 280:	21 50       	subi	r18, 0x01	; 1
- 282:	80 40       	sbci	r24, 0x00	; 0
- 284:	90 40       	sbci	r25, 0x00	; 0
- 286:	e1 f7       	brne	.-8      	; 0x280 <main+0x46>
- 288:	00 c0       	rjmp	.+0      	; 0x28a <main+0x50>
- 28a:	00 00       	nop
- 28c:	e8 cf       	rjmp	.-48     	; 0x25e <main+0x24>
+ 118:	2f ef       	ldi	r18, 0xFF	; 255
+ 11a:	83 ed       	ldi	r24, 0xD3	; 211
+ 11c:	90 e3       	ldi	r25, 0x30	; 48
+ 11e:	21 50       	subi	r18, 0x01	; 1
+ 120:	80 40       	sbci	r24, 0x00	; 0
+ 122:	90 40       	sbci	r25, 0x00	; 0
+ 124:	e1 f7       	brne	.-8      	; 0x11e <main+0x78>
+ 126:	00 c0       	rjmp	.+0      	; 0x128 <main+0x82>
+ 128:	00 00       	nop
+ 12a:	e3 cf       	rjmp	.-58     	; 0xf2 <main+0x4c>
 
-0000028e <_exit>:
- 28e:	f8 94       	cli
+0000012c <_Z20nrf24_write_registerhh>:
 
-00000290 <__stop_program>:
- 290:	ff cf       	rjmp	.-2      	; 0x290 <__stop_program>
+
+}
+
+void nrf24_power_up_tx() {
+	nrf24_write_register(CONFIG, nrf24_read_register(CONFIG) | 0x0A);
+ 12c:	cf 93       	push	r28
+ 12e:	c6 2f       	mov	r28, r22
+ 130:	95 b1       	in	r25, 0x05	; 5
+ 132:	9b 7f       	andi	r25, 0xFB	; 251
+ 134:	95 b9       	out	0x05, r25	; 5
+ 136:	8f 71       	andi	r24, 0x1F	; 31
+ 138:	80 62       	ori	r24, 0x20	; 32
+ 13a:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 13e:	8c 2f       	mov	r24, r28
+ 140:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 144:	85 b1       	in	r24, 0x05	; 5
+ 146:	84 60       	ori	r24, 0x04	; 4
+ 148:	85 b9       	out	0x05, r24	; 5
+ 14a:	cf 91       	pop	r28
+ 14c:	08 95       	ret
+
+0000014e <_Z21nrf24_write_registershPhh>:
+ 14e:	0f 93       	push	r16
+ 150:	1f 93       	push	r17
+ 152:	cf 93       	push	r28
+ 154:	df 93       	push	r29
+ 156:	8b 01       	movw	r16, r22
+ 158:	d4 2f       	mov	r29, r20
+ 15a:	95 b1       	in	r25, 0x05	; 5
+ 15c:	9b 7f       	andi	r25, 0xFB	; 251
+ 15e:	95 b9       	out	0x05, r25	; 5
+ 160:	8f 71       	andi	r24, 0x1F	; 31
+ 162:	80 62       	ori	r24, 0x20	; 32
+ 164:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 168:	c0 e0       	ldi	r28, 0x00	; 0
+ 16a:	cd 17       	cp	r28, r29
+ 16c:	40 f4       	brcc	.+16     	; 0x17e <_Z21nrf24_write_registershPhh+0x30>
+ 16e:	f8 01       	movw	r30, r16
+ 170:	ec 0f       	add	r30, r28
+ 172:	f1 1d       	adc	r31, r1
+ 174:	80 81       	ld	r24, Z
+ 176:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 17a:	cf 5f       	subi	r28, 0xFF	; 255
+ 17c:	f6 cf       	rjmp	.-20     	; 0x16a <_Z21nrf24_write_registershPhh+0x1c>
+ 17e:	85 b1       	in	r24, 0x05	; 5
+ 180:	84 60       	ori	r24, 0x04	; 4
+ 182:	85 b9       	out	0x05, r24	; 5
+ 184:	df 91       	pop	r29
+ 186:	cf 91       	pop	r28
+ 188:	1f 91       	pop	r17
+ 18a:	0f 91       	pop	r16
+ 18c:	08 95       	ret
+
+0000018e <_Z19nrf24_read_registerh>:
+ 18e:	95 b1       	in	r25, 0x05	; 5
+ 190:	9b 7f       	andi	r25, 0xFB	; 251
+ 192:	95 b9       	out	0x05, r25	; 5
+ 194:	8f 71       	andi	r24, 0x1F	; 31
+ 196:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 19a:	80 e0       	ldi	r24, 0x00	; 0
+ 19c:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 1a0:	95 b1       	in	r25, 0x05	; 5
+ 1a2:	94 60       	ori	r25, 0x04	; 4
+ 1a4:	95 b9       	out	0x05, r25	; 5
+ 1a6:	08 95       	ret
+
+000001a8 <_Z14nrf24_send_cmdh>:
+ 1a8:	95 b1       	in	r25, 0x05	; 5
+ 1aa:	9b 7f       	andi	r25, 0xFB	; 251
+ 1ac:	95 b9       	out	0x05, r25	; 5
+ 1ae:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 1b2:	85 b1       	in	r24, 0x05	; 5
+ 1b4:	84 60       	ori	r24, 0x04	; 4
+ 1b6:	85 b9       	out	0x05, r24	; 5
+ 1b8:	08 95       	ret
+
+000001ba <_Z10nrf24_initv>:
+ 1ba:	0e 94 87 01 	call	0x30e	; 0x30e <_Z8spi_initv>
+ 1be:	84 b1       	in	r24, 0x04	; 4
+ 1c0:	82 60       	ori	r24, 0x02	; 2
+ 1c2:	84 b9       	out	0x04, r24	; 4
+ 1c4:	84 b1       	in	r24, 0x04	; 4
+ 1c6:	84 60       	ori	r24, 0x04	; 4
+ 1c8:	84 b9       	out	0x04, r24	; 4
+ 1ca:	85 b1       	in	r24, 0x05	; 5
+ 1cc:	8d 7f       	andi	r24, 0xFD	; 253
+ 1ce:	85 b9       	out	0x05, r24	; 5
+ 1d0:	85 b1       	in	r24, 0x05	; 5
+ 1d2:	84 60       	ori	r24, 0x04	; 4
+ 1d4:	85 b9       	out	0x05, r24	; 5
+ 1d6:	8f e1       	ldi	r24, 0x1F	; 31
+ 1d8:	9e e4       	ldi	r25, 0x4E	; 78
+ 1da:	01 97       	sbiw	r24, 0x01	; 1
+ 1dc:	f1 f7       	brne	.-4      	; 0x1da <_Z10nrf24_initv+0x20>
+ 1de:	00 c0       	rjmp	.+0      	; 0x1e0 <_Z10nrf24_initv+0x26>
+ 1e0:	00 00       	nop
+ 1e2:	60 e0       	ldi	r22, 0x00	; 0
+ 1e4:	80 e0       	ldi	r24, 0x00	; 0
+ 1e6:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 1ea:	60 e0       	ldi	r22, 0x00	; 0
+ 1ec:	81 e0       	ldi	r24, 0x01	; 1
+ 1ee:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 1f2:	60 e0       	ldi	r22, 0x00	; 0
+ 1f4:	82 e0       	ldi	r24, 0x02	; 2
+ 1f6:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 1fa:	63 e0       	ldi	r22, 0x03	; 3
+ 1fc:	83 e0       	ldi	r24, 0x03	; 3
+ 1fe:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 202:	60 e0       	ldi	r22, 0x00	; 0
+ 204:	84 e0       	ldi	r24, 0x04	; 4
+ 206:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 20a:	60 e0       	ldi	r22, 0x00	; 0
+ 20c:	85 e0       	ldi	r24, 0x05	; 5
+ 20e:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 212:	6e e0       	ldi	r22, 0x0E	; 14
+ 214:	86 e0       	ldi	r24, 0x06	; 6
+ 216:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 21a:	85 b1       	in	r24, 0x05	; 5
+ 21c:	82 60       	ori	r24, 0x02	; 2
+ 21e:	85 b9       	out	0x05, r24	; 5
+ 220:	85 b1       	in	r24, 0x05	; 5
+ 222:	8b 7f       	andi	r24, 0xFB	; 251
+ 224:	85 b9       	out	0x05, r24	; 5
+ 226:	08 95       	ret
+
+00000228 <_Z17nrf24_set_rx_modePhh>:
+ 228:	cf 93       	push	r28
+ 22a:	df 93       	push	r29
+ 22c:	ec 01       	movw	r28, r24
+ 22e:	85 b1       	in	r24, 0x05	; 5
+ 230:	8d 7f       	andi	r24, 0xFD	; 253
+ 232:	85 b9       	out	0x05, r24	; 5
+ 234:	85 b1       	in	r24, 0x05	; 5
+ 236:	84 60       	ori	r24, 0x04	; 4
+ 238:	85 b9       	out	0x05, r24	; 5
+ 23a:	85 e0       	ldi	r24, 0x05	; 5
+ 23c:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 240:	82 e0       	ldi	r24, 0x02	; 2
+ 242:	0e 94 c7 00 	call	0x18e	; 0x18e <_Z19nrf24_read_registerh>
+ 246:	68 2f       	mov	r22, r24
+ 248:	62 60       	ori	r22, 0x02	; 2
+ 24a:	82 e0       	ldi	r24, 0x02	; 2
+ 24c:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 250:	45 e0       	ldi	r20, 0x05	; 5
+ 252:	be 01       	movw	r22, r28
+ 254:	8b e0       	ldi	r24, 0x0B	; 11
+ 256:	0e 94 a7 00 	call	0x14e	; 0x14e <_Z21nrf24_write_registershPhh>
+ 25a:	60 e2       	ldi	r22, 0x20	; 32
+ 25c:	82 e1       	ldi	r24, 0x12	; 18
+ 25e:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 262:	80 e0       	ldi	r24, 0x00	; 0
+ 264:	0e 94 c7 00 	call	0x18e	; 0x18e <_Z19nrf24_read_registerh>
+ 268:	68 2f       	mov	r22, r24
+ 26a:	63 60       	ori	r22, 0x03	; 3
+ 26c:	80 e0       	ldi	r24, 0x00	; 0
+ 26e:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+ 272:	85 b1       	in	r24, 0x05	; 5
+ 274:	82 60       	ori	r24, 0x02	; 2
+ 276:	85 b9       	out	0x05, r24	; 5
+ 278:	85 b1       	in	r24, 0x05	; 5
+ 27a:	8b 7f       	andi	r24, 0xFB	; 251
+ 27c:	85 b9       	out	0x05, r24	; 5
+ 27e:	df 91       	pop	r29
+ 280:	cf 91       	pop	r28
+ 282:	08 95       	ret
+
+00000284 <_Z20nrf24_data_availableh>:
+}
+
+uint8_t nrf24_data_available(uint8_t pipe) {
+ 284:	cf 93       	push	r28
+ 286:	c8 2f       	mov	r28, r24
+	
+	uint8_t status = nrf24_read_register(STATUS); // Get data received status
+ 288:	87 e0       	ldi	r24, 0x07	; 7
+ 28a:	0e 94 c7 00 	call	0x18e	; 0x18e <_Z19nrf24_read_registerh>
+	
+	if((status&(1<<6))&&(status&(pipe<<1))) { // Check if smth was received
+ 28e:	98 2f       	mov	r25, r24
+ 290:	90 74       	andi	r25, 0x40	; 64
+ 292:	86 ff       	sbrs	r24, 6
+ 294:	10 c0       	rjmp	.+32     	; 0x2b6 <_Z20nrf24_data_availableh+0x32>
+ 296:	2c 2f       	mov	r18, r28
+ 298:	30 e0       	ldi	r19, 0x00	; 0
+ 29a:	22 0f       	add	r18, r18
+ 29c:	33 1f       	adc	r19, r19
+ 29e:	90 e0       	ldi	r25, 0x00	; 0
+ 2a0:	82 23       	and	r24, r18
+ 2a2:	93 23       	and	r25, r19
+ 2a4:	89 2b       	or	r24, r25
+ 2a6:	31 f0       	breq	.+12     	; 0x2b4 <_Z20nrf24_data_availableh+0x30>
+		nrf24_write_register(STATUS, (1<<6));
+ 2a8:	60 e4       	ldi	r22, 0x40	; 64
+ 2aa:	87 e0       	ldi	r24, 0x07	; 7
+ 2ac:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20nrf24_write_registerhh>
+		return 1;
+ 2b0:	91 e0       	ldi	r25, 0x01	; 1
+ 2b2:	01 c0       	rjmp	.+2      	; 0x2b6 <_Z20nrf24_data_availableh+0x32>
+	}
+	return 0;
+ 2b4:	90 e0       	ldi	r25, 0x00	; 0
+}
+ 2b6:	89 2f       	mov	r24, r25
+ 2b8:	cf 91       	pop	r28
+ 2ba:	08 95       	ret
+
+000002bc <_Z13nrf24_receivePh>:
+
+void nrf24_receive(uint8_t *buffer) {
+ 2bc:	ef 92       	push	r14
+ 2be:	ff 92       	push	r15
+ 2c0:	0f 93       	push	r16
+ 2c2:	1f 93       	push	r17
+ 2c4:	cf 93       	push	r28
+ 2c6:	7c 01       	movw	r14, r24
+	PORTB &= ~(1 << CSN); // Pull CSN low
+ 2c8:	85 b1       	in	r24, 0x05	; 5
+ 2ca:	8b 7f       	andi	r24, 0xFB	; 251
+ 2cc:	85 b9       	out	0x05, r24	; 5
+		
+	spi_transfer(R_RX_PAYLOAD); // Write payload command
+ 2ce:	81 e6       	ldi	r24, 0x61	; 97
+ 2d0:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+		
+	for (uint8_t i = 0; i < 32; i++) { // Send the payload
+ 2d4:	c0 e0       	ldi	r28, 0x00	; 0
+ 2d6:	c0 32       	cpi	r28, 0x20	; 32
+ 2d8:	50 f4       	brcc	.+20     	; 0x2ee <_Z13nrf24_receivePh+0x32>
+		buffer[i]=spi_transfer(0x00);
+ 2da:	87 01       	movw	r16, r14
+ 2dc:	0c 0f       	add	r16, r28
+ 2de:	11 1d       	adc	r17, r1
+ 2e0:	80 e0       	ldi	r24, 0x00	; 0
+ 2e2:	0e 94 90 01 	call	0x320	; 0x320 <_Z12spi_transferh>
+ 2e6:	f8 01       	movw	r30, r16
+ 2e8:	80 83       	st	Z, r24
+void nrf24_receive(uint8_t *buffer) {
+	PORTB &= ~(1 << CSN); // Pull CSN low
+		
+	spi_transfer(R_RX_PAYLOAD); // Write payload command
+		
+	for (uint8_t i = 0; i < 32; i++) { // Send the payload
+ 2ea:	cf 5f       	subi	r28, 0xFF	; 255
+ 2ec:	f4 cf       	rjmp	.-24     	; 0x2d6 <_Z13nrf24_receivePh+0x1a>
+		buffer[i]=spi_transfer(0x00);
+	}
+		
+	PORTB |= (1 << CSN); // Pull CSN high
+ 2ee:	85 b1       	in	r24, 0x05	; 5
+ 2f0:	84 60       	ori	r24, 0x04	; 4
+ 2f2:	85 b9       	out	0x05, r24	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2f4:	f5 e3       	ldi	r31, 0x35	; 53
+ 2f6:	fa 95       	dec	r31
+ 2f8:	f1 f7       	brne	.-4      	; 0x2f6 <_Z13nrf24_receivePh+0x3a>
+ 2fa:	00 00       	nop
+		
+	_delay_us(10);
+		
+	nrf24_send_cmd(FLUSH_RX); // Flush rx fifo
+ 2fc:	82 ee       	ldi	r24, 0xE2	; 226
+ 2fe:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <_Z14nrf24_send_cmdh>
+ 302:	cf 91       	pop	r28
+ 304:	1f 91       	pop	r17
+ 306:	0f 91       	pop	r16
+ 308:	ff 90       	pop	r15
+ 30a:	ef 90       	pop	r14
+ 30c:	08 95       	ret
+
+0000030e <_Z8spi_initv>:
+#include <avr/io.h>
+#include "spi.h"
+
+void spi_init() {
+	// Set MOSI, SCK, and CSN as output
+	DDRB |= (1 << MOSI) | (1 << SCK) | (1 << CSN);
+ 30e:	84 b1       	in	r24, 0x04	; 4
+ 310:	8c 62       	ori	r24, 0x2C	; 44
+ 312:	84 b9       	out	0x04, r24	; 4
+
+	// Set MISO as input
+	DDRB &= ~(1 << MISO);
+ 314:	84 b1       	in	r24, 0x04	; 4
+ 316:	8f 7e       	andi	r24, 0xEF	; 239
+ 318:	84 b9       	out	0x04, r24	; 4
+
+	// Enable SPI, set as Master, with SCK = CLK/16
+	SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0);
+ 31a:	81 e5       	ldi	r24, 0x51	; 81
+ 31c:	8c bd       	out	0x2c, r24	; 44
+ 31e:	08 95       	ret
+
+00000320 <_Z12spi_transferh>:
+}
+
+uint8_t spi_transfer(uint8_t data) {
+	// Load data into the SPI data register
+	SPDR = data;
+ 320:	8e bd       	out	0x2e, r24	; 46
+
+	// Wait for transmission to complete
+	while (!(SPSR & (1 << SPIF)));
+ 322:	0d b4       	in	r0, 0x2d	; 45
+ 324:	07 fe       	sbrs	r0, 7
+ 326:	fd cf       	rjmp	.-6      	; 0x322 <_Z12spi_transferh+0x2>
+
+	// Return the received data
+	return SPDR;
+ 328:	8e b5       	in	r24, 0x2e	; 46
+ 32a:	08 95       	ret
+
+0000032c <_Z9uart_initm>:
+void uart_print_binary(uint8_t value) {
+	for (uint8_t i = 8; i > 0; i--) {
+		uint8_t bit = (value >> (i - 1)) & 0x01;
+		uart_transmit(bit ? '1' : '0');
+	}
+}
+ 32c:	dc 01       	movw	r26, r24
+ 32e:	cb 01       	movw	r24, r22
+ 330:	88 0f       	add	r24, r24
+ 332:	99 1f       	adc	r25, r25
+ 334:	aa 1f       	adc	r26, r26
+ 336:	bb 1f       	adc	r27, r27
+ 338:	88 0f       	add	r24, r24
+ 33a:	99 1f       	adc	r25, r25
+ 33c:	aa 1f       	adc	r26, r26
+ 33e:	bb 1f       	adc	r27, r27
+ 340:	9c 01       	movw	r18, r24
+ 342:	ad 01       	movw	r20, r26
+ 344:	22 0f       	add	r18, r18
+ 346:	33 1f       	adc	r19, r19
+ 348:	44 1f       	adc	r20, r20
+ 34a:	55 1f       	adc	r21, r21
+ 34c:	22 0f       	add	r18, r18
+ 34e:	33 1f       	adc	r19, r19
+ 350:	44 1f       	adc	r20, r20
+ 352:	55 1f       	adc	r21, r21
+ 354:	60 e0       	ldi	r22, 0x00	; 0
+ 356:	74 e2       	ldi	r23, 0x24	; 36
+ 358:	84 ef       	ldi	r24, 0xF4	; 244
+ 35a:	90 e0       	ldi	r25, 0x00	; 0
+ 35c:	0e 94 f1 01 	call	0x3e2	; 0x3e2 <__udivmodsi4>
+ 360:	21 50       	subi	r18, 0x01	; 1
+ 362:	31 09       	sbc	r19, r1
+ 364:	30 93 c5 00 	sts	0x00C5, r19	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+ 368:	20 93 c4 00 	sts	0x00C4, r18	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+ 36c:	88 e1       	ldi	r24, 0x18	; 24
+ 36e:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+ 372:	86 e0       	ldi	r24, 0x06	; 6
+ 374:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 378:	08 95       	ret
+
+0000037a <_Z13uart_transmith>:
+ 37a:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 37e:	95 ff       	sbrs	r25, 5
+ 380:	fc cf       	rjmp	.-8      	; 0x37a <_Z13uart_transmith>
+ 382:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 386:	08 95       	ret
+
+00000388 <_Z12uart_printlnPKc>:
+ 388:	cf 93       	push	r28
+ 38a:	df 93       	push	r29
+ 38c:	ec 01       	movw	r28, r24
+ 38e:	88 81       	ld	r24, Y
+ 390:	88 23       	and	r24, r24
+ 392:	21 f0       	breq	.+8      	; 0x39c <_Z12uart_printlnPKc+0x14>
+ 394:	21 96       	adiw	r28, 0x01	; 1
+ 396:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 39a:	f9 cf       	rjmp	.-14     	; 0x38e <_Z12uart_printlnPKc+0x6>
+ 39c:	8d e0       	ldi	r24, 0x0D	; 13
+ 39e:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 3a2:	8a e0       	ldi	r24, 0x0A	; 10
+ 3a4:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 3a8:	df 91       	pop	r29
+ 3aa:	cf 91       	pop	r28
+ 3ac:	08 95       	ret
+
+000003ae <_Z12uart_printlnPh>:
+ 3ae:	cf 93       	push	r28
+ 3b0:	df 93       	push	r29
+ 3b2:	ec 01       	movw	r28, r24
+ 3b4:	88 81       	ld	r24, Y
+ 3b6:	88 23       	and	r24, r24
+ 3b8:	21 f0       	breq	.+8      	; 0x3c2 <_Z12uart_printlnPh+0x14>
+ 3ba:	21 96       	adiw	r28, 0x01	; 1
+ 3bc:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 3c0:	f9 cf       	rjmp	.-14     	; 0x3b4 <_Z12uart_printlnPh+0x6>
+ 3c2:	8d e0       	ldi	r24, 0x0D	; 13
+ 3c4:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 3c8:	8a e0       	ldi	r24, 0x0A	; 10
+ 3ca:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 3ce:	df 91       	pop	r29
+ 3d0:	cf 91       	pop	r28
+ 3d2:	08 95       	ret
+
+000003d4 <_Z12uart_newlinev>:
+
+void uart_newline(void) {
+	uart_transmit('\r');
+ 3d4:	8d e0       	ldi	r24, 0x0D	; 13
+ 3d6:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+	uart_transmit('\n');
+ 3da:	8a e0       	ldi	r24, 0x0A	; 10
+ 3dc:	0e 94 bd 01 	call	0x37a	; 0x37a <_Z13uart_transmith>
+ 3e0:	08 95       	ret
+
+000003e2 <__udivmodsi4>:
+ 3e2:	a1 e2       	ldi	r26, 0x21	; 33
+ 3e4:	1a 2e       	mov	r1, r26
+ 3e6:	aa 1b       	sub	r26, r26
+ 3e8:	bb 1b       	sub	r27, r27
+ 3ea:	fd 01       	movw	r30, r26
+ 3ec:	0d c0       	rjmp	.+26     	; 0x408 <__udivmodsi4_ep>
+
+000003ee <__udivmodsi4_loop>:
+ 3ee:	aa 1f       	adc	r26, r26
+ 3f0:	bb 1f       	adc	r27, r27
+ 3f2:	ee 1f       	adc	r30, r30
+ 3f4:	ff 1f       	adc	r31, r31
+ 3f6:	a2 17       	cp	r26, r18
+ 3f8:	b3 07       	cpc	r27, r19
+ 3fa:	e4 07       	cpc	r30, r20
+ 3fc:	f5 07       	cpc	r31, r21
+ 3fe:	20 f0       	brcs	.+8      	; 0x408 <__udivmodsi4_ep>
+ 400:	a2 1b       	sub	r26, r18
+ 402:	b3 0b       	sbc	r27, r19
+ 404:	e4 0b       	sbc	r30, r20
+ 406:	f5 0b       	sbc	r31, r21
+
+00000408 <__udivmodsi4_ep>:
+ 408:	66 1f       	adc	r22, r22
+ 40a:	77 1f       	adc	r23, r23
+ 40c:	88 1f       	adc	r24, r24
+ 40e:	99 1f       	adc	r25, r25
+ 410:	1a 94       	dec	r1
+ 412:	69 f7       	brne	.-38     	; 0x3ee <__udivmodsi4_loop>
+ 414:	60 95       	com	r22
+ 416:	70 95       	com	r23
+ 418:	80 95       	com	r24
+ 41a:	90 95       	com	r25
+ 41c:	9b 01       	movw	r18, r22
+ 41e:	ac 01       	movw	r20, r24
+ 420:	bd 01       	movw	r22, r26
+ 422:	cf 01       	movw	r24, r30
+ 424:	08 95       	ret
+
+00000426 <_exit>:
+ 426:	f8 94       	cli
+
+00000428 <__stop_program>:
+ 428:	ff cf       	rjmp	.-2      	; 0x428 <__stop_program>
