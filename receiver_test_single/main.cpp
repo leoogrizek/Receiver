@@ -1,4 +1,6 @@
 #include <avr/io.h>
+#include <avr/interrupt.h>
+
 
 #define F_CPU 16000000UL
 #include <util/delay.h>
@@ -6,11 +8,34 @@
 #include "rf.h"
 #include "uart.h"
 #include "spi.h"
+#include "servo.h"
 #include <stdio.h>
+
+// The ISR for Timer1 compare match
+ISR(TIMER1_COMPA_vect) {
+	// Turn off the current channel
+	PORTD &= ~(1 << current_channel);
+
+	// Move to the next channel
+	current_channel++;
+	if(current_channel >= NUM_CHANNELS) {
+		current_channel = 0;
+	}
+
+	// Set the pulse length for the next channel
+	OCR1A = pulse_lengths[current_channel];
+
+	// Turn on the next channel (unless it's the idle channel)
+	if(current_channel != IDLE_CHANNEL) {
+		PORTD |= (1 << current_channel);
+	}
+}
 
 int main(void) {
 	uart_init(9600);
 	spi_init();
+	servo_init();
+	sei();
 	
 	uint8_t RxAddress[] = {0xEE, 0xDD, 0xCC, 0xBB, 0xAA};
 	uint8_t RxData[32];
@@ -23,6 +48,10 @@ int main(void) {
 
 	char buffer[50];  // Buffer to hold the formatted string
 	
+	for (int i = 0; i < NUM_CHANNELS; i++) {
+		joystick_values[i]=128;
+	}
+	updatePulseLengths();
 	
 	while (1) {
 		if(nrf24_data_available(1)) {
@@ -31,9 +60,13 @@ int main(void) {
 			sprintf(buffer, "Thrust: %d, Yaw: %d, Pitch: %d, Roll: %d", RxData[0], RxData[1], RxData[2], RxData[3]);
 			uart_println(buffer);
 			uart_newline();
-			
+			for (int i = 0; i < NUM_CHANNELS; i++) {
+				joystick_values[i]=RxData[i];
+			}
+			//updatePulseLengths();
 		}
 		
 		//uart_println("test");
 	}
 }
+

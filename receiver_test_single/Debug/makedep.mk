@@ -6,6 +6,8 @@ main.cpp
 
 rf.cpp
 
+servo.cpp
+
 spi.cpp
 
 uart.cpp

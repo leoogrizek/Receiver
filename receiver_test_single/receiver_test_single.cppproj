@@ -162,6 +162,12 @@
     <Compile Include="rf.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="servo.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="spi.cpp">
       <SubType>compile</SubType>
     </Compile>
