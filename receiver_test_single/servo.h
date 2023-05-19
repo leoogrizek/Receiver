@@ -12,6 +12,8 @@
 
 #define F_CPU 16000000UL // CPU frequency of 16MHz
 
+
+
 // 5 pins to control in total
 #define NUM_CHANNELS 5
 #define THRUST_CHANNEL 0
@@ -37,6 +39,8 @@ extern uint8_t joystick_values[4];
 
 void servo_init();
 uint16_t mapJoystickValue(uint8_t value, uint16_t min_pulse, uint16_t max_pulse);
+uint16_t mapThrustValue(uint8_t value, uint16_t min_pulse, uint16_t max_pulse);
 void updatePulseLengths();
+
 
 #endif /* SERVO_H_ */

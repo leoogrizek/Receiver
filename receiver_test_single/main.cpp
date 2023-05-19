@@ -14,12 +14,13 @@
 // The ISR for Timer1 compare match
 ISR(TIMER1_COMPA_vect) {
 	// Turn off the current channel
-	PORTD &= ~(1 << current_channel);
+	PORTD &= ~(1 << (current_channel+2)); //+2 bc channel starts with 0 but pins with 2
 
 	// Move to the next channel
 	current_channel++;
 	if(current_channel >= NUM_CHANNELS) {
 		current_channel = 0;
+		updatePulseLengths(); // Updating here instead of in the main loop makes sure timings dont get messed up if you change mid cycle
 	}
 
 	// Set the pulse length for the next channel
@@ -27,7 +28,7 @@ ISR(TIMER1_COMPA_vect) {
 
 	// Turn on the next channel (unless it's the idle channel)
 	if(current_channel != IDLE_CHANNEL) {
-		PORTD |= (1 << current_channel);
+		PORTD |= (1 << (current_channel+2));
 	}
 }
 
@@ -57,7 +58,7 @@ int main(void) {
 		if(nrf24_data_available(1)) {
 			nrf24_receive(RxData);
 			uart_println("Packet received: ");
-			sprintf(buffer, "Thrust: %d, Yaw: %d, Pitch: %d, Roll: %d", RxData[0], RxData[1], RxData[2], RxData[3]);
+			sprintf(buffer, "Thrust: %d, Yaw: %d, Pitch: %d, Roll: %d", pulse_lengths[0], pulse_lengths[1], pulse_lengths[2], pulse_lengths[3]);
 			uart_println(buffer);
 			uart_newline();
 			for (int i = 0; i < NUM_CHANNELS; i++) {
