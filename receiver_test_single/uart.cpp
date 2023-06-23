@@ -68,14 +68,14 @@ void uart_println(uint8_t *str) {
 	uart_transmit('\n');
 }
 
-void uart_print_binary(uint8_t value) {
+void uart_print_binary(uint8_t value) { // Prints a uint8_t over uart formatted in binary
 	for (uint8_t i = 8; i > 0; i--) {
 		uint8_t bit = (value >> (i - 1)) & 0x01;
 		uart_transmit(bit ? '1' : '0');
 	}
 }
 
-void uart_newline(void) {
+void uart_newline(void) { // Creates new line over uart
 	uart_transmit('\r');
 	uart_transmit('\n');
 }

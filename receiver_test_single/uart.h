@@ -10,7 +10,7 @@
 #define UART_H_
 
 
-// Function prototypes
+
 void uart_init(uint32_t baud_rate);
 void uart_transmit(uint8_t data);
 uint8_t uart_receive(void);

@@ -50,9 +50,9 @@ uint16_t mapThrustValue(uint8_t value, uint16_t min_pulse, uint16_t max_pulse) {
 // Update the pulse lengths based on the current joystick values
 void updatePulseLengths() {
 	pulse_lengths[THRUST_CHANNEL] = mapThrustValue(joystick_values[0], 1000, 2000);
-	pulse_lengths[YAW_CHANNEL] = mapJoystickValue(joystick_values[1], 500, 2500);
-	pulse_lengths[PITCH_CHANNEL] = mapJoystickValue(joystick_values[2], 500, 2500);
-	pulse_lengths[ROLL_CHANNEL] = mapJoystickValue(joystick_values[3], 500, 2500);
+	pulse_lengths[YAW_CHANNEL] = 5800-mapJoystickValue(joystick_values[1], 500, 2400);
+	pulse_lengths[PITCH_CHANNEL] = mapJoystickValue(joystick_values[2], 500, 2300);
+	pulse_lengths[ROLL_CHANNEL] = mapJoystickValue(joystick_values[3], 1000, 2000);
 
 	// Set the idle time to achieve a total cycle time of 20ms
 	pulse_lengths[IDLE_CHANNEL] = 39800 - (pulse_lengths[THRUST_CHANNEL] + pulse_lengths[YAW_CHANNEL] + pulse_lengths[PITCH_CHANNEL] + pulse_lengths[ROLL_CHANNEL]);

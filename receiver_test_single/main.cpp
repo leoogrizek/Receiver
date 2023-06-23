@@ -33,35 +33,35 @@ ISR(TIMER1_COMPA_vect) {
 }
 
 int main(void) {
-	uart_init(9600);
+	uart_init(9600); //initialize SPI, UART, servos and enable interrupts
 	spi_init();
 	servo_init();
 	sei();
 	
-	uint8_t RxAddress[] = {0xEE, 0xDD, 0xCC, 0xBB, 0xAA};
-	uint8_t RxData[32];
+	uint8_t RxAddress[] = {0xEE, 0xDD, 0xCC, 0xBB, 0xAA}; // Receive address
+	uint8_t RxData[32]; // Received data will go here
 	
 	nrf24_init();
-	nrf24_set_rx_mode(RxAddress, 10);
+	nrf24_set_rx_mode(RxAddress, 10); // Sets up the device as a receiver
 	
 
 	uart_println("Beginning ... ");
 
 	char buffer[50];  // Buffer to hold the formatted string
 	
-	for (int i = 0; i < NUM_CHANNELS; i++) {
+	for (int i = 0; i < NUM_CHANNELS; i++) { // Initial joystick values before any data is received, everything idle
 		joystick_values[i]=128;
 	}
-	updatePulseLengths();
+	updatePulseLengths(); // Initial update of joystick values
 	
 	while (1) {
-		if(nrf24_data_available(1)) {
-			nrf24_receive(RxData);
+		if(nrf24_data_available(1)) { // Check if data available
+			nrf24_receive(RxData); // Read packet
 			uart_println("Packet received: ");
 			sprintf(buffer, "Thrust: %d, Yaw: %d, Pitch: %d, Roll: %d", pulse_lengths[0], pulse_lengths[1], pulse_lengths[2], pulse_lengths[3]);
 			uart_println(buffer);
 			uart_newline();
-			for (int i = 0; i < NUM_CHANNELS; i++) {
+			for (int i = 0; i < NUM_CHANNELS; i++) { // Update temporary joystick value buffer
 				joystick_values[i]=RxData[i];
 			}
 			//updatePulseLengths();
