@@ -28,7 +28,7 @@ For information regarding the electronics and other details, refer to the `RC_ai
 - Crimping tool for 2.54mm connectors
 
 ## Installation
-To get this project up and running, you will need to have Microchip Studio installed on your computer. You can download it from [here](https://www.microchip.com/mplab/microchip-studio). After installing Microchip Studio, clone this repository and add the `Receiver` folder to the project. AVR LIBM is necessary and should be installed within Microchip Studio by default.
+To get this project up and running, you will need to have Microchip Studio installed on your computer. You can download it from [here](https://www.microchip.com/mplab/microchip-studio). After installing Microchip Studio, clone this repository and add the `Receiver` folder to the project or open the `Receiver.atsln` file. AVR LIBM is necessary and should be installed within Microchip Studio by default.
 
 ## Usage
 Build the project using the GNU compiler for AVR (atmega328p) in Microchip Studio and upload the code to your Arduino Nano. Make sure to connect the NRF24L01 transceiver and other components as described in `RC_airplane_english.pdf`. ESC may not start if its connected to the Arduino after it has been powered, in this case temporarily remove the battery.
